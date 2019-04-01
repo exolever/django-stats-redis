@@ -7,8 +7,6 @@ from .stats import StatsMixin
 
 
 class ActionStatsMixin(StatsMixin):
-
-    # Dict to define {[action_name]: [signal_hook_to_send]}
     _stats_notification = []
     _default_stats = [
         ('views', 'count_views', False),
@@ -18,12 +16,9 @@ class ActionStatsMixin(StatsMixin):
         stats_notification = getattr(self, '_stats_notification', ())
         for key, notification_signal_hook in stats_notification:
             if key == action_verb and notification_signal_hook:
-                    notification_signal_hook.send(**kwargs)
+                notification_signal_hook.send(**kwargs)
 
     def can_see(self, user_from, raise_exceptions=True):
-        """
-        Default method to validate if user can see the object
-        """
         return True
 
     @property
