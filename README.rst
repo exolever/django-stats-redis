@@ -3,7 +3,7 @@ django-stats-redis
 =============================
 
 .. image:: https://badge.fury.io/py/django-stats-redis.svg
-    :target: https://badge.fury.io/py/django-stats-redis-models
+    :target: https://badge.fury.io/py/django-stats-redis
 
 .. image:: https://requires.io/github/exolever/django-stats-redis/requirements.svg?branch=master
      :target: https://requires.io/github/exolever/django-stats-redis/requirements/?branch=master
