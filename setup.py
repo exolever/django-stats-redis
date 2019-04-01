@@ -23,9 +23,9 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
-    name='django-stats-mixin',
+    name='django-stats-redis',
     version=version,
-    description="""Hello Stats""",
+    description='Manage stats with Redis within mixin for Django models',
     long_description=readme + '\n\n' + history,
     author='marfyl',
     author_email='marfyl.dev@gmail.com',
