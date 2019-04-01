@@ -25,8 +25,8 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='django-stats-redis',
     version=version,
-    description='Manage stats with Redis within mixin for Django models',
-    long_description=readme + '\n\n' + history,
+    description='Manage stats within Redis for Django models',
+    long_description=readme,
     author='marfyl',
     author_email='marfyl.dev@gmail.com',
     url='https://github.com/exolever/django-stats',

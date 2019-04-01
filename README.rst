@@ -25,6 +25,9 @@ django-stats-redis
    :target: https://opensource.org/licenses/MIT
 
 
+Manage stats within Redis for Django models
+
+
 Quickstart
 ----------
 
