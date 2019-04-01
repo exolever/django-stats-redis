@@ -9,8 +9,8 @@ addons:
     organization: openexo
 install: pip install -r requirements_test.txt
 script:
-- tox
-- sonar-scanner
+  - tox
+  - sonar-scanner
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
@@ -22,4 +22,4 @@ deploy:
     repo: exolever/django-stats-redis
     python: 3.6
 after_success:
-- codecov
+  - codecov
