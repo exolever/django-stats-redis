@@ -4,9 +4,9 @@ Installation
 
 At the command line::
 
-    $ easy_install django-stats
+    $ easy_install django-stats-redis
 
 Or, if you have virtualenvwrapper installed::
 
-    $ mkvirtualenv django-stats
-    $ pip install django-stats
+    $ mkvirtualenv django-stats-redis
+    $ pip install django-stats-redis
