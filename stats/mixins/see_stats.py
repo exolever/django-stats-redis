@@ -53,3 +53,10 @@ class ActionStatsMixin(StatsMixin):
             actor_content_type=ct,
             actor_object_id=user.id,
             verb=settings.STATS_ACTION_GENERIC_SEE).exists()
+
+    def get_last_seen(self, user):
+        ct = ContentType.objects.get_for_model(user)
+        return self.action_object_actions.filter(
+            actor_content_type=ct,
+            actor_object_id=user.id,
+            verb=settings.STATS_ACTION_GENERIC_SEE).order_by('-timestamp').first()
