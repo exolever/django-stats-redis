@@ -1,0 +1,25 @@
+sudo: false
+language: python
+cache: pip
+python: 3.6
+matrix:
+  fast_finish: true
+addons:
+  sonarcloud:
+    organization: openexo
+install: pip install -r requirements_test.txt
+script:
+  - tox
+  - sonar-scanner
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: marfyl
+  password:
+    secure: mYKGXE082gEPsfFdBE96TT1L/xi+gboZth2eZaFIrH9p+BcBsJ6ibNPtcNA/YR8NjjjVLYwqXA+mjSTjDja7TQuIJPMGc9VMmzjZLTJM4vd4P+EmdSQba4yB3Es82zsG7rMaSbGv68UyXGde+vC9C+UZ8wfCG9CBy/UKA9ovbBrX63Uve0faQZXOJvHvGouGqsKEwNOoyC2AY0JyG8od/fafsSUa2G8q45Xc9dfXCQU6Otqvv6eP9O1lzgTRKxtNkP3Uomtb4K2GhfLYjW8jk949mItCOm/81nt9XrQNdZLcO8AnE2FtXwj3rMdv1hMDYW1+8zGFJATNe3tcmIvkuFNXJCcQMf7XIHLVWvC0OXbtM9P3+5nzTk2hFCWFf1KM9Y8YmgBJOIsSWw2cUZHe6yH+cvpZUYhcIHrea6DvNwriA1W9/ksCmYX9599eS9hMB28CBE9cv58/4rblZQKM3U4Mi6AXQjfgJlWtG7ZID9wDZH9qCswG9M75nZDE/8Nv/0xLDcSNWCEkwiuKHKG5xIIfor19RFhGl9tfCBmiDO8Bd34jeZam2qGZ+JMta/A5gxfzAITXVrG5cbJmNFLBchkHHXXFTNwvbnXf14sPZi4bBOPjR6c1RY90lDHc+p0NEXG3UEyThAO2LUPMxUPAvRZc8Lad2ErUbkEB5bK2PD8=
+  on:
+    tags: true
+    repo: exolever/django-stats-redis
+    python: 3.6
+after_success:
+  - codecov

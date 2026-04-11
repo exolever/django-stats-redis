@@ -1,0 +1,13 @@
+dist/*
+*.egg-info/*
+HGREV
+.coverage
+.tox/
+Django-*.egg
+*.pyc
+htmlcov/
+docs/_build/
+.idea/
+.eggs/
+*.log
+*.rdb
